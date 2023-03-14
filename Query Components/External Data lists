@@ -1,0 +1,6 @@
+// External List
+let iplist = (externaldata(urlstring: string) [@'https://raw.githubusercontent.com/jreegun/Researches/master/Malware%20researches/Qakbot/Qakbot_OneNote_Campaign_Payload_Delivery.txt']);
+// Filter list
+UrlClickEvents
+| where Timestamp > ago(30d)
+| where Url in (iplist)  
