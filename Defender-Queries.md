@@ -35,7 +35,7 @@ DeviceTvmSoftwareVulnerabilities
 ```kql
 // External list with distinct SHA values from abuse.ch malwarebazaar
 let SHAList = (externaldata(SHAValue:string)
-[@"https://raw.githubusercontent.com/mikkelhjeds/Blue_teaming/main/ThreatHunting/GetFileHashByTagMalwareBazaar/sha_values.txt"]
+[@"https://raw.githubusercontent.com/test.txt"]
 with(format="csv")
 | distinct SHAValue);
 // Compare devices for distinct SHA values
