@@ -29,3 +29,16 @@ DeviceTvmSoftwareVulnerabilities
 | distinct DeviceId, CveId
 | summarize count()
 ```
+
+<H2>Compare SHA values with external threat DB's and check devices</H2>
+
+```kql
+// External list with distinct SHA values from abuse.ch malwarebazaar
+let SHAList = (externaldata(SHAValue:string)
+[@"https://raw.githubusercontent.com/mikkelhjeds/Blue_teaming/main/ThreatHunting/GetFileHashByTagMalwareBazaar/sha_values.txt"]
+with(format="csv")
+| distinct SHAValue);
+// Compare devices for distinct SHA values
+DeviceFileEvents
+| where SHA256 in (SHAList)
+```
