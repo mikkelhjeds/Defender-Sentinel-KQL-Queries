@@ -22,6 +22,7 @@ AADSignInEventsBeta
 <H2>Vulnerable devices</H2>
 
 ```kql
+// Returns devices with vulnerable software with CVSS score above x
 DeviceTvmSoftwareVulnerabilities
 | join kind=inner DeviceTvmSoftwareVulnerabilitiesKB on CveId
 | where CvssScore >= 8.5
