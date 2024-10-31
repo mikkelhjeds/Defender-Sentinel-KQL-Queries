@@ -35,9 +35,7 @@ DeviceTvmSoftwareVulnerabilities
 
 ```kql
 // External list with distinct SHA values from abuse.ch malwarebazaar
-let SHAList = (externaldata(SHAValue:string)
-[@"https://raw.githubusercontent.com/test.txt"]
-with(format="csv")
+let SHAList = (externaldata(SHAValue:string) [@"https://raw.githubusercontent.com/shalist.txt"]with(format="csv")
 | distinct SHAValue);
 // Compare devices for distinct SHA values
 DeviceFileEvents
@@ -46,7 +44,8 @@ DeviceFileEvents
 
 ```kql
 // External List
-let iplist = (externaldata(urlstring: string) [@'https://raw.githubusercontent.com/jreegun/Researches/master/Malware%20researches/Qakbot/Qakbot_OneNote_Campaign_Payload_Delivery.txt']);
+let iplist = (externaldata(urlstring:string) [@'https://raw.githubusercontent.com/urllist.txt']with(format="csv")
+| distinct urlstring);;
 // Filter list
 UrlClickEvents
 | where Timestamp > ago(30d)
