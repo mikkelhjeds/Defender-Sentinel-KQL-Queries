@@ -30,7 +30,7 @@ DeviceTvmSoftwareVulnerabilities
 | summarize count()
 ```
 
-<H2>Compare SHA values with external threat DB's and check devices</H2>
+<H2>Compare values with external threat intelligence feeds</H2>
 
 ```kql
 // External list with distinct SHA values from abuse.ch malwarebazaar
@@ -42,3 +42,12 @@ with(format="csv")
 DeviceFileEvents
 | where SHA256 in (SHAList)
 ```
+
+```kql
+// External List
+let iplist = (externaldata(urlstring: string) [@'https://raw.githubusercontent.com/jreegun/Researches/master/Malware%20researches/Qakbot/Qakbot_OneNote_Campaign_Payload_Delivery.txt']);
+// Filter list
+UrlClickEvents
+| where Timestamp > ago(30d)
+| where Url in (iplist)
+``` 
