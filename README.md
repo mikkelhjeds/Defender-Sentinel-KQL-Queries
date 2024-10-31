@@ -1,4 +1,6 @@
-# This is my collection of KQL queries.
+#Defender and Sentinel KQL query collection 
+
+>This is a collection of KQL queries i have used.
 
 Link to [Defender Queries](https://github.com/mikkelhjeds/Defender-Sentinel-Queries/blob/main/Defender-Queries.md).
 
