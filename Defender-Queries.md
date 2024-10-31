@@ -35,7 +35,7 @@ DeviceTvmSoftwareVulnerabilities
 
 ```kql
 // External list with distinct SHA values from abuse.ch malwarebazaar
-let SHAList = (externaldata(SHAValue:string) [@"https://raw.githubusercontent.com/shalist.txt"]with(format="csv")
+let SHAList = (externaldata(SHAValue:string) [@"https://raw.githubusercontent.com/...shalist.txt"]with(format="csv")
 | distinct SHAValue);
 // Compare devices for distinct SHA values
 DeviceFileEvents
@@ -44,7 +44,7 @@ DeviceFileEvents
 
 ```kql
 // External List
-let iplist = (externaldata(urlstring:string) [@'https://raw.githubusercontent.com/urllist.txt']with(format="csv")
+let iplist = (externaldata(urlstring:string) [@'https://raw.githubusercontent.com/...urllist.txt']with(format="csv")
 | distinct urlstring);;
 // Filter list
 UrlClickEvents
