@@ -1,6 +1,5 @@
 <H1>Defender KQL Queries</H1>
 
-
 <H2>Phishing related queries</H2>
 
 ```kql
