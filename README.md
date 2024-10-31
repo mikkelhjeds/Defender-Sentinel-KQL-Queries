@@ -1,6 +1,6 @@
 # Defender-Sentinel-Queries
 
-### # Users recieving mails from suspicious sender, returns logins from recipients outside dk
+### #Phishing related queries
 
 ```kql
 // Returns the logins from the users recieving emails from a specific sender
