@@ -18,6 +18,7 @@ AADSignInEventsBeta
 | summarize count() by AccountUpn, Country
 ```
 
+
 <H2>Vulnerable devices</H2>
 
 ```kql
@@ -28,6 +29,7 @@ DeviceTvmSoftwareVulnerabilities
 | distinct DeviceId, CveId
 | summarize count()
 ```
+
 
 <H2>Compare values with external threat intelligence feeds</H2>
 
@@ -50,6 +52,7 @@ UrlClickEvents
 | where Timestamp > ago(30d)
 | where Url in (iplist)
 ``` 
+
 
 <H2>Network</H2>
 
