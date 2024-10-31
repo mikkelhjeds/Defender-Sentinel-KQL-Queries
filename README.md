@@ -1,4 +1,4 @@
-#Defender and Sentinel KQL query collection 
+<H1>Defender and Sentinel KQL query collection</H1> 
 
 >This is a collection of KQL queries i have used.
 
