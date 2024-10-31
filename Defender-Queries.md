@@ -18,3 +18,13 @@ AADSignInEventsBeta
 | where ErrorCode == "0"
 | summarize count() by AccountUpn, Country
 ```
+
+<H2>Vulnerable devices</H2>
+
+```kql
+DeviceTvmSoftwareVulnerabilities
+| join kind=inner DeviceTvmSoftwareVulnerabilitiesKB on CveId
+| where CvssScore >= 8.5
+| distinct DeviceId, CveId
+| summarize count()
+```
