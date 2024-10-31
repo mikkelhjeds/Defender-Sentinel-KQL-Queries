@@ -1,9 +1,7 @@
-<H1>Defender and Sentinel Queries</H1>
-
-<H2>Defender KQL Queries</H2>
+<H1>Defender KQL Queries</H1>
 
 
-<H3>Phishing related queries</H3>
+<H2>Phishing related queries</H2>
 
 ```kql
 // Returns the logins from the users recieving emails from a specific sender
@@ -20,5 +18,3 @@ AADSignInEventsBeta
 | where ErrorCode == "0"
 | summarize count() by AccountUpn, Country
 ```
-
-<H2>Sentinel KQL Queries</H2>
