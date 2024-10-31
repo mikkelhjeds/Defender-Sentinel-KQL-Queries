@@ -1,8 +1,10 @@
 # Defender-Sentinel-Queries
 
-// Users recieving mails from suspicious sender, returns logins from recipients outside dk
+### # Users recieving mails from suspicious sender, returns logins from recipients outside dk
 
-let sussender = "ehueter@hubeba.ch";
+```kql
+// Returns the logins from the users recieving emails from a specific sender
+let sussender = "";
 let emailUsersArray = toscalar(
     EmailEvents
     | where SenderFromAddress contains sussender
@@ -14,3 +16,4 @@ AADSignInEventsBeta
 | where Country != "DK"
 | where ErrorCode == "0"
 | summarize count() by AccountUpn, Country
+```
