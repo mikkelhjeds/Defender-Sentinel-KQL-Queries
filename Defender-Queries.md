@@ -45,7 +45,7 @@ DeviceFileEvents
 ```kql
 // External List
 let iplist = (externaldata(urlstring:string) [@'https://raw.githubusercontent.com/...urllist.txt']with(format="csv")
-| distinct urlstring);;
+| distinct urlstring);
 // Filter list
 UrlClickEvents
 | where Timestamp > ago(30d)
